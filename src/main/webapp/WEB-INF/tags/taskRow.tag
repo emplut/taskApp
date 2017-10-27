@@ -2,11 +2,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ attribute name="task" type="com.sda.demo.tasks.model.Task" required="true" %>
 <%@ attribute name="id" type="java.lang.Integer" required="true" %>
+<%@ taglib prefix="date" uri="/WEB_INF/tld/localDate.tld" %>
 
 <tr>
     <th scope="row">${id}</th>
     <td>${task.name}</td>
-    <td><fmt:formatDate value="${task.dateCreated}" pattern="d.mm.YYYY"></fmt:formatDate></td>
+    <td>${date:formatLocalDate(task.dateCreated, "d-MM-yyyy")}</td>
     <td>
         <a href="/details?id=${task.id}">
             <button type="button" class="btn btn-default">Details</button>

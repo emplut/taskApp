@@ -25,19 +25,33 @@
                 </c:choose>
             </h1>
             <form:form method="POST" action="/add" modelAttribute="task">
-                <table>
-                    <tr>
-                        <td><form:label path="name">Name</form:label></td>
-                        <td><form:input path="name"/></td>
-                    </tr>
-                    <tr>
-                        <td><form:label path="comment">Comment</form:label></td>
-                        <td><form:input path="comment"/></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Save"></td>
-                    </tr>
-                </table>
+                <form:hidden path="id"/>
+                <form:hidden path="dateCreated"/>
+                <div class="form-group row">
+                    <form:label path="name" class="col-2 col-form-label">Name</form:label>
+                    <div class="col-10">
+                        <form:input path="name" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <form:label path="comment" class="col-2 col-form-label">Comment</form:label>
+                    <div class="col-10">
+                        <form:input path="comment" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <form:label path="priority" class="col-2 col-form-label">Priority</form:label>
+                    <div class="col-10">
+                        <form:input path="priority" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <form:label path="deadline" class="col-2 col-form-label">Deadline</form:label>
+                    <div class="col-10">
+                        <form:input path="deadline" class="form-control" type="datetime-local"/>
+                    </div>
+                </div>
+                <input type="submit" value="Save" class="btn btn-primary"/>
             </form:form>
         </div>
     </div>
